@@ -45,7 +45,11 @@ router.get('/date', async function(req, res){
   res.send(datecreate);
 });
 
-
+//search for any categories that exist
+router.get('/cate', async function(req, res){
+  let cate = await userModel.find({categories: {$exists:true}});
+  res.send(cate);
+});
 
 
 
