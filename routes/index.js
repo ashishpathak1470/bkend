@@ -51,7 +51,16 @@ router.get('/cate', async function(req, res){
   res.send(cate);
 });
 
-
-
-
+// search in a specific category length
+router.get('/length', async function(req, res){
+  let length = await userModel.find({
+    $expr:{
+      $and:[
+        {$gte: [{$strLenCP:'$nickname'},0]},
+        {$lte: [{$strLenCP:'$nickname'},3]}
+      ]
+    }
+  });
+  res.send(length);
+});
 module.exports = router;
