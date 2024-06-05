@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 
 // flash use kiya hai
 router.get('/failed', function(req, res) {
-  req.flash
+  req.flash("age", 12);
 });
 
 module.exports = router;
