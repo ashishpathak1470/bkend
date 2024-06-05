@@ -5,7 +5,7 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-// flash bna rahe hai
+// flash use kiya hai
 router.get('/failed', function(req, res) {
   req.flash
 });
